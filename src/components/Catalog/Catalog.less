@@ -1,0 +1,19 @@
+@import '../../styles/index.less';
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); /* Adjust column width for responsiveness */
+  gap: 1rem; /* Smaller gaps between grid items */
+  margin: 0.5rem; /* Remove margins around the catalog */
+  padding: 4px; /* Remove padding around the catalog */
+  height:max-content;
+  background-color: @background-color;
+  justify-items: stretch; /* Ensure items stretch to fill columns */
+  align-items: stretch; /* Ensure items stretch vertically */
+  box-sizing: border-box;
+  .product-card {
+    width: 100%; /* Ensure cards stretch to fill grid cells */
+    height: auto;
+    box-sizing: border-box; /* Include padding and border in size */
+  }
+}

@@ -1,0 +1,47 @@
+// Theme Variables
+@primary-color: #2a830f;
+@secondary-color: #333;
+@background-color: #bebebe;
+@card-background-color: #ffffff;
+@text-color: #555;
+@border-color: #ddd;
+@hover-shadow-color: rgba(0, 0, 0, 0.1);
+
+
+.no-scroll {
+  margin: 0;
+  max-height: 100%;
+  overflow: hidden
+}
+
+
+// Base Styles
+html,
+body {
+  font-family: Arial, sans-serif;
+  background-color: @background-color;
+  color: @text-color;
+  margin: 0;
+  /* Remove default margins */
+  padding: 0;
+  /* Remove default padding */
+  background-color: @background-color;
+  /* Match the catalog background */
+  box-sizing: border-box;
+  /* Include padding and border in size */
+}
+
+h1 {
+  color: @primary-color;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.icon-button {
+  background-color: @secondary-color;
+  font-size: large;
+  display: inline-flex; /* Align content within the button */
+  align-items: center; /* Center text and icon vertically */
+  justify-content: center; /* Center content horizontally */
+  gap: 0.5rem; /* Spacing between icon and text */
+}

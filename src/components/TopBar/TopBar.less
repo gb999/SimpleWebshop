@@ -1,0 +1,140 @@
+@import '../../styles/index.less';
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-sizing: border-box;
+  background-color: @primary-color;
+  color: #fff;
+  box-shadow: 0 2px 6px @hover-shadow-color;
+  width: 100%;
+  transition: background-color 0.3s;
+
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+
+
+  .hamburger {
+    /* Default hidden on large screens */
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    .link-button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: color 0.3s, background-color 0.3s;
+
+      &:hover {
+        cursor: pointer;
+        color: #ddd;
+        background-color: @hover-shadow-color;
+      }
+    }
+
+    &.open {
+      display: flex;
+    }
+  }
+
+  // Media Query for Responsive Topbar
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding: 15px 20px;
+
+    .hamburger { 
+      /* Show hamburger button in top-right corener*/
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+    }
+
+    .nav-links {
+      display: none;
+      /* Hide links by default */
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 15px;
+      width: 100%;
+      padding: 15px 0;
+      background-color: @primary-color;
+      box-sizing: border-box;
+      border-radius: 8px;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      z-index: 1;
+    }
+
+    .nav-links.open {
+      display: flex;
+      /* Show links when the hamburger is clicked */
+    }
+
+    .nav-links > * {
+      font-size: 18px;
+      padding: 12px 20px;
+      text-align: start;
+      width: 100%;
+    }
+  }
+
+  .link-button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: @hover-shadow-color;
+    }
+  }
+
+  .cart-bubble {
+    top: 0;
+    right: 0;
+    background-color: @secondary-color;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+  }
+}

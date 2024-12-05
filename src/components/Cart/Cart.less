@@ -1,0 +1,129 @@
+@import '../../styles/index.less';
+
+/* Cart overlay background */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+  z-index: 1000;  /* Ensure it's above all other content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cart container */
+.cart-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Slight shadow */
+  overflow-y: auto;  /* Allow scroll if content overflows */
+  max-height: 80vh;  /* Set max height */
+  position: relative;
+}
+
+/* Close button */
+.close-cart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: @primary-color;
+  &:hover {
+    color: @secondary-color;
+  }
+
+}
+
+/* Cart title */
+.cart-container h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: @primary-color;
+  font-weight: bold;
+}
+
+/* Cart items */
+.cart-items {
+  max-height: 70vh;  /* Limit the cart items height */
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid @border-color;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.cart-item div {
+  flex-grow: 1;
+}
+
+.cart-item p {
+  margin: 5px 0;
+}
+
+/* Cart total price */
+.cart-total {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.checkout-button, .complete-button {
+  padding: 12px 20px;
+  background-color: @primary-color;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: @secondary-color;
+  }
+}
+button.back-to-cart {
+  background: none;
+  border: none;
+  color: @primary-color;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+
+/* Scrollbar styles for cart */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: @secondary-color;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 6px;
+}
