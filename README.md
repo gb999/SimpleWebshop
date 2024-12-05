@@ -1,10 +1,7 @@
-# `create-preact`
+# Simple Webshop
+This is a simple frontend for a webshop, made with preact.
 
-<h2 align="center">
-  <img height="256" width="256" src="./src/assets/preact.svg">
-</h2>
-
-<h3 align="center">Get started using Preact and Vite!</h3>
+I used [fakestoreapi.com](https://fakestoreapi.com/) for getting product data.
 
 ## Getting Started
 
